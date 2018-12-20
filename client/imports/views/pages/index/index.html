@@ -1,0 +1,39 @@
+<template name="index_template">
+    <div class="pageheader">
+                <h1>Icons</h1>
+                <div class="breadcrumb-wrapper hidden-xs">
+                    <span class="label">You are here:</span>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Dashboard</a>
+                        </li>
+                        <li>UI Elements</li>
+                        <li class="active">Icons</li>
+                    </ol>
+                </div>
+            </div>
+	 <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Default Buttons</h3>
+                                <div class="actions pull-right">
+                                    <i class="fa fa-expand"></i>
+                                    <i class="fa fa-chevron-down"></i>
+                                    <i class="fa fa-times"></i>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <button type="button" class="btn btn-default">Default</button>
+                                <button type="button" class="btn btn-primary">Primary</button>
+                                <button type="button" class="btn btn-success">Success</button>
+                                <button type="button" class="btn btn-info">Info</button>
+                                <button type="button" class="btn btn-warning">Warning</button>
+                                <button type="button" class="btn btn-danger">Danger</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress progress-striped active">
+                     <div class="progress-bar progress-bar-default" style="width: {{persend}}%">{{persend}}%</div>
+                </div>
+</template>
