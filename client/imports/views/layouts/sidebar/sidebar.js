@@ -5,9 +5,6 @@ import './sidebar.html';
 import '/client/imports/api/app.js';
 
 if (Meteor.isClient) {
-    Template.sidebar.helpers({
-
-    });
     Template.sidebar.events({
         'click .aabbcc':function (event) {
             $(event.target).parent('.nav-dropdown').addClass('active');
