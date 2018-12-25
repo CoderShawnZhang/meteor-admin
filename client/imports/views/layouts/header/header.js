@@ -3,12 +3,21 @@ import { $ } from 'meteor/jquery';
 
 import './header.html';
 
-
-
 Template.header.events({
-	"click .sidebar-toggle":function(){
-		$('#sidebar-right').toggleClass('sidebar-right-open');
-        $("#toggle-right .fa").toggleClass("fa-indent fa-dedent");
+	"click #toggle-right":function(event){
+        if ($(event.target).hasClass('open')) {
+            $('#sidebar-right').animate({
+                "right": "-245px"
+            },300);
+            $(event.target).removeClass('open').addClass('closed');
+        } else {
+            $('#sidebar-right').animate({
+                "right": "0px"
+            },300);
+            $(event.target).removeClass('closed').addClass('open');
+        }
+        // $('#sidebar-right').toggleClass('sidebar-right-open');
+        // $("#toggle-right .fa").toggleClass("fa-indent fa-dedent");
 	},
 	"click #toggle-left":function(){
 		var bodyEl = $('#main-wrapper');

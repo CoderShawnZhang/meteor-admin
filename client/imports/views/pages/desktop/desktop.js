@@ -1,23 +1,19 @@
 import { Template } from 'meteor/templating';
 import { $ } from 'meteor/jquery';
-
+import { ReactivityProvider } from '/client/imports/facades';
 import './desktop.html';
 
-message = new Mongo.Collection('messages');
-
 if(Meteor.isClient){
-
 	Template.desktop_template.helpers({
 		messageList:function(){
-
-			return message.find();
+			return ReactivityProvider.find(ReactivityProvider.types.Message);
 		},
 	});
 	Template.desktop_template.events({
-		"click #sendMessage":function(event){
-				message.insert({
+		"click #sendMessage":function(){
+            ReactivityProvider.types.Message.insert({
 					userId:2,
-					message:$('.txtMessage').val(),
+					message:new Date() + $('.txtMessage').val(),
 					created_at:new Date(),
 				});
 		 	var div=$(".panel-body");

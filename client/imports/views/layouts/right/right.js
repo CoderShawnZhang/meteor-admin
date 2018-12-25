@@ -8,4 +8,4 @@ Template.right.events({
 	"click .userItem":function(){
 		$('#chat_room').show();
 	}
-})
+});

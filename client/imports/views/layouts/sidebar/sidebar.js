@@ -4,7 +4,7 @@ import { $ } from 'meteor/jquery';
 import './sidebar.html';
 import '/client/imports/api/app.js';
 
-if (Meteor.isClient) { 
+if (Meteor.isClient) {
     Template.sidebar.events({
         'click .aabbcc':function (event) {
             $(event.target).parent('.nav-dropdown').addClass('active');
