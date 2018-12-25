@@ -1,6 +1,6 @@
 <template name="chat_template">
     <!--聊天窗口-->
-    <div style="position: absolute;z-index: 9;width: 900px;top:80px;left: 150px;box-shadow: 0px 0px 10px #000;height:617px;" id="chat_room">
+    <div style="position: absolute;z-index: 9;width: 900px;top:80px;left: 150px;box-shadow: 0px 0px 10px #000;height:617px;display: none;" id="chat_room">
         <div class="panel panel-default chat-widget">
             <div class="panel-heading">
                 <h3 class="panel-title">订单管理员</h3>
@@ -14,14 +14,14 @@
                 <div class="row wrapper animated fadeInRight">
                     <div class="col-xs-2 col-sm-2 col-md-2 " style="width:75px;">
 	                 <span class="avatar">
-	                       <img src="/img/avatar3.png" class="img-circle" alt="">
+	                       <img src="" class="img-circle" alt="">
 	                       <i class="on animated bounceIn"></i>
 	                 </span>
                     </div>
                     <div class="col-xs-10 col-sm-10 col-md-10" style="700px;">
                         <div class="post default">
                             <span class="arrow left"></span>
-                            <p style="margin: 5px;">{{message}}</p>
+                            <p style="margin: 5px;">{{message}}&nbsp;</p>
                         </div>
                     </div>
                 </div>
@@ -46,9 +46,9 @@
             <div class="panel-footer">
                 <form>
                     <div class="input-group">
-                        <input type="text" class="form-control txtMessage" placeholder="Say something">
+                        <input type="text" class="form-control txtMessage" placeholder="信息内容输入...">
                         <span class="input-group-btn">
-                         <button class="btn btn-primary" type="button" id="sendMessage">SEND</button>
+                         <button class="btn btn-primary" type="button" id="sendMessage">发&nbsp;&nbsp;送</button>
                     </span>
                     </div>
                 </form>

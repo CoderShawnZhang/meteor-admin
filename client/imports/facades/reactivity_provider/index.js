@@ -1,8 +1,9 @@
-import {Message} from '/lib/imports/collections';
+import {Message,User} from '/lib/imports/collections';
 
 const ReactivityProvider = function () {
   this.types = {
-      Message
+      Message,
+      User
   };
 };
 
@@ -21,11 +22,15 @@ ReactivityProvider.prototype = {
     observeChanges(type,query = {},options = {},callbacks) {
         resolveType(type).find(query,options).observeChanges(callbacks);
     },
+    insert(type,data = {}){
+        console.log(data);
+        resolveType(type).insert(data);
+    },
     update(){
 
     },
-    delete(){
-
+    delete(type,condition = {}){
+        resolveType(type).remove(condition);
     }
 };
 

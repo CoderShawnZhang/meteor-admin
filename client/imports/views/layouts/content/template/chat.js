@@ -1,12 +1,16 @@
 import { Template } from 'meteor/templating';
 import { $ } from 'meteor/jquery';
 import { ReactivityProvider } from '/client/imports/facades';
+import { Session } from 'meteor/session';
+
 import './chat.html';
 
 if(Meteor.isClient){
     Template.chat_template.helpers({
         messageList:function(){
-            return ReactivityProvider.find(ReactivityProvider.types.Message);
+            var uid = Session.get('chat_uid');
+            console.log(uid);
+            return ReactivityProvider.find(ReactivityProvider.types.Message,{userId:uid});
         },
     });
     Template.chat_template.events({
@@ -16,6 +20,7 @@ if(Meteor.isClient){
                 message:new Date() + $('.txtMessage').val(),
                 created_at:new Date(),
             });
+            Session.set('chat_uid',2);
             var div=$(".panel-body");
             div.scrollTop(div[0].scrollHeight);
         },
@@ -23,4 +28,5 @@ if(Meteor.isClient){
             $("#chat_room").hide();
         }
     });
+
 }
